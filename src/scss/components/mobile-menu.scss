@@ -1,0 +1,78 @@
+.mob-menu {
+  opacity: 0;
+  visibility: hidden;
+  @include fixed($top: 0, $right: 0, $bottom: 0, $left: 0);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $opacity-bg-08;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul {
+    margin-bottom: 20%;
+    text-align: center;
+    font-family: 'PF DinDisplay Pro';
+    font-size: 26px;
+    font-weight: bold;
+
+    li {
+      cursor: pointer;
+      padding: 10px 30px;
+      border-bottom: 2px solid $color-white;
+
+      &:last-child {
+        border: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__info {
+    @include absolute($right: 10px, $bottom: 10px);
+    text-align: right;
+    color: $color-white;
+    @include xs(max-width, 250px);
+
+    &-loc {
+      line-height: 30px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-tel {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-decoration: none;
+      color: $color-white;
+
+      span {
+        line-height: 30px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .icon-phone {
+        fill: $color-white;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .icon-close {
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+    @include absolute($top: 30px, $right: 30px);
+    fill: $color-white;
+  }
+}

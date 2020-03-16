@@ -1,0 +1,23 @@
+extends ../layout/template
+
+block variables
+  - var title = 'Haval H6'
+  - var keywords = ''
+  - var description = ''
+  - var imgClass = 'advantage__img h6'
+  - var advantageImgPath = 'Haval-H6-img.png'
+  - var contentImgPath = 'h6-main-img.png'
+  - var contentImgClass = 'h6'
+
+block content
+
+  main.about-car.h6
+    include ../components/car-info
+
+    include ../components/car-slider
+
+    include ../components/advantage
+
+    include ../components/find-cheaper
+
+    include ../components/location

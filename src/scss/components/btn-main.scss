@@ -1,0 +1,48 @@
+.btn-main {
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  width: 327px;
+  margin-right: 90px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-main;
+  transition: all 0.4s ease;
+  @include lg-block() {
+    width: 250px;
+    margin-right: 50px;
+  }
+  @include sm-block() {
+    max-width: 315px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  @include xs(margin-bottom, 15px);
+
+  span {
+    display: block;
+    line-height: 60px;
+    font-size: 24px;
+    font-weight: 300;
+    transition: all 0.4s ease;
+    @include lg-block() {
+      line-height: 40px;
+      font-size: 18px;
+    }
+    @include sm-block() {
+      line-height: 46px;
+      font-size: 25px;
+    }
+    @include xs-block() {
+      line-height: 34px;
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 14px 28px $btn-shadow, 0 10px 10px $btn-shadow;
+  }
+}

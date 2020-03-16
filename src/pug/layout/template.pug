@@ -1,0 +1,48 @@
+include ../utils/mixins
+
+block variables
+
+doctype html
+html(lang="ru-Ru")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="keywords" content=keywords)
+    meta(name="description" content=description)
+
+    link(rel="stylesheet", href="css/bundle.min.css")
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <![endif]-->
+
+  body
+    .flexer
+      include ../components/header
+      block content
+    include ../components/footer
+    include ../components/mobile-menu
+
+    script.
+      function initMap() {
+        const position = {
+          lat: 55.649507,
+          lng: 37.837513
+        };
+
+        const options = {
+          center: position,
+          zoom: 15
+        };
+
+        const map = new google.maps.Map(document.querySelector('.location__map'), options);
+
+        const marker = new google.maps.Marker({
+          position: position,
+          map: map
+        });
+      }
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb_--bQb21pbUVsCiks43Vj7WLGVvYr-c&callback=initMap" async defer)
+    script(src="js/bundle.min.js")

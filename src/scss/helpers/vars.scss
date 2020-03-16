@@ -1,0 +1,31 @@
+// Color variables
+
+$color-white: #fff;
+$color-black: #000;
+$color-grey: #9d9999;
+$color-light-grey: #f1f3f4;
+$color-main: #f43032;
+$color-dark: #171518;
+$color-main-bg: #3f3f3f;
+$color-grey-opacity: rgba(157, 153, 153, 0.2);
+
+$opacity-bg-09: rgba(0, 0, 0, 0.9);
+$opacity-bg-08: rgba(0, 0, 0, 0.8);
+
+$secondary-btn: rgba(0, 0, 0, 0.5);
+$btn-shadow: rgba(0, 0, 0, 0.2);
+$btn-shadow-white: rgba(255,255,255, 0.1);
+
+// For button "About Car" variables
+
+$thick: 3px;
+$thick-small: 1px;
+$pad: 0.7em;
+$extra: calc(#{$pad} * 1.2);
+
+// Used media breakpoints
+
+$breakpoints: (
+  'phone-small': 320px,
+  'phone': 400px,
+);

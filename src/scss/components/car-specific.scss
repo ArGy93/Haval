@@ -1,0 +1,134 @@
+.car-specific {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  font-family: 'PF DinDisplay Pro';
+  margin-top: -30px;
+  margin-left: 13%;
+  @include md-block() {
+    justify-content: center;
+    margin-top: -20px;
+    margin-left: 0;
+  }
+  @include xs(margin-top, 0);
+
+  &__items {
+    @include row-flex();
+  }
+
+  &__item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include xs-block() {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+    }
+
+    &-value {
+      font-weight: bold;
+      color: $color-grey;
+
+      .large {
+        font-size: 80px;
+        @include lg(font-size, 50px);
+        @include md(font-size, 30px);
+        @include sm(font-size, 40px);
+        @include xs(font-size, 20px);
+      }
+
+      .small {
+        margin-left: 20px;
+        font-size: 50px;
+        @include lg-block() {
+          margin-left: 10px;
+          font-size: 36px;
+        }
+        @include md(font-size, 20px);
+        @include xs-block() {
+          margin-left: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-label {
+      margin-left: 10px;
+      white-space: nowrap;
+      font-size: 18px;
+      font-weight: bold;
+      color: $color-black;
+      @include lg-block() {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+      @include sm(display, none);
+    }
+
+    &.first {
+      padding-right: 90px;
+      padding-left: 45px;
+      background-color: $color-grey-opacity;
+      clip-path: polygon(0 100%, 85% 100%, 85% 100%, 100% 0, 100% 0, 15% 0);
+      @include md-block() {
+        padding-right: 40px;
+        padding-left: 35px;
+      }
+      @include sm-block() {
+        width: 25%;
+        padding: 10px 15px;
+      }
+      @include xs(padding, 10px);
+    }
+
+    &.second {
+      margin-left: -20px;
+      @include sm-block() {
+        margin-left: 0;
+        padding-right: 45px;
+        padding-left: 35px;
+      }
+      @include sm-block() {
+        width: 25%;
+        padding: 10px 15px;
+      }
+      @include xs(padding, 10px);
+    }
+
+    &.third {
+      margin-left: -42px;
+      padding-left: 80px;
+      padding-right: 40px;
+      background-color: $color-grey-opacity;
+      clip-path: polygon(0 100%, 85% 100%, 85% 100%, 100% 0, 100% 0, 15% 0);
+      @include md-block() {
+        margin-left: 0;
+        padding-right: 63px;
+        padding-left: 50px;
+      }
+      @include sm-block() {
+        width: 25%;
+        padding: 10px 15px;
+      }
+      @include xs(padding, 10px);
+    }
+
+    &.fourth {
+      @include md(margin-left, -20px);
+      @include sm-block() {
+        margin-left: 0;
+        padding-right: 45px;
+        padding-left: 35px;
+      }
+      @include sm-block() {
+        width: 25%;
+        padding: 10px 15px;
+      }
+      @include xs(padding, 10px);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@include reset();
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+button, a {
+  user-select: none;
+}
+
+.flexer {
+  flex-grow: 1;
+}
+
+.container {
+  @include wrapper();
+  box-sizing: border-box;
+}
+
+.feature {
+  clip-path: polygon(0 0, 550px 0, 550px 0, 540px 70px, 540px 70px, 100% 70px, 100% 70px, 100% 100%, 100% 100%, 0 100%);
+  @include sm-block() {
+    clip-path: polygon(0 0, 65% 0, 65% 0, 63% 70px, 63% 70px, 100% 70px, 100% 70px, 100% 100%, 100% 100%, 0 100%);
+  }
+}
+
+
+

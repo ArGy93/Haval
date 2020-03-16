@@ -1,0 +1,277 @@
+.haval {
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 95px;
+  padding-bottom: 85px;
+  font-family: 'PF DinDisplay Pro';
+  background-color: $color-main-bg;
+  @include xs-block() {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &.feature {
+    margin-top: -72px;
+    padding-top: 165px;
+    @include xs(padding-top, 95px);
+  }
+
+  &__main {
+    display: flex;
+    position: relative;
+    @include sm(flex-direction, column);
+  }
+
+  &__info {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 580px;
+    margin-left: 90px;
+    @include md(margin-left, 30px);
+    @include sm-block() {
+      width: auto;
+      margin-left: 0;
+      padding: 0 20px;
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    @include xs(flex-direction, column);
+
+    &:before {
+      @include pseudo();
+      @include absolute($top: 5%, $bottom: 13%, $left: 0);
+      width: 3px;
+      background-color: $color-white;
+      @include xs-block() {
+        top: 5px;
+        bottom: 15px;
+      }
+    }
+  }
+
+  &__model {
+    margin-left: 15px;
+
+    &-type {
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: 300;
+      color: $color-white;
+      @include xs(font-size, 15px);
+    }
+
+    &-name {
+      text-transform: uppercase;
+      font-size: 50px;
+      font-weight: bold;
+      color: $color-white;
+      @include xs(font-size, 35px);
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 60px;
+    @include sm-block() {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    @include xs-block() {
+      margin-top: 10px;
+      margin-left: 15px;
+    }
+
+    &-start {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: $color-white;
+      @include sm-block() {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      @include xs(font-size, 20px);
+    }
+
+    &-profit {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: bold;
+      color: $color-main;
+      @include xs(font-size, 24px);
+    }
+  }
+
+  ul {
+    max-width: 300px;
+    margin-top: 65px;
+    margin-bottom: 95px;
+    padding-left: 35px;
+    line-height: 26px;
+    font-size: 18px;
+    color: $color-white;
+    @include xs-block() {
+      max-width: unset;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding-left: 20px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+
+    li {
+      position: relative;
+
+      &::before {
+        @include pseudo();
+        @include absolute($top: 8px, $left: -30px);
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: $color-main;
+        @include xs-block() {
+          left: -20px;
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    margin-top: -50px;
+    margin-left: 90px;
+    @include lg(margin-top, 20%);
+    @include md-block() {
+      margin-top: 30%;
+      margin-left: 30px;
+    }
+    @include sm-block() {
+      flex-direction: column;
+      margin: auto;
+      margin-top: -5%;
+    }
+  }
+
+  &__img {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-top: 3%;
+    @include lg-block() {
+      @include absolute($top: 50%, $right: 0);
+      width: 60%;
+    }
+    @include md-block() {
+      top: 65%;
+      width: 68%;
+    }
+    @include sm-block() {
+      overflow: hidden;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  &.F7 {
+
+    .haval__img {
+
+      img {
+        max-width: unset;
+        width: 115%;
+        margin-top: -16%;
+        margin-left: -16%;
+        @include lg(width, 110%);
+        @include md(margin-left, -10%);
+        @include sm-block() {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          margin-top: -14%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.H6 {
+
+    .haval__img {
+
+      img {
+        max-width: unset;
+        width: 105%;
+        margin-top: -12%;
+        margin-left: -10%;
+        @include lg-block() {
+          width: 100%;
+          margin-top: -11%;
+        }
+        @include md(margin-left, -4%);
+        @include sm-block() {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          margin-top: -10%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.H2 {
+
+    .haval__img {
+
+      img {
+        max-width: unset;
+        width: 110%;
+        margin-top: -15%;
+        margin-left: -15%;
+        @include lg-block() {
+          width: 100%;
+          margin-top: -15%;
+          margin-left: -10%;
+        }
+        @include md(margin-left, -5%);
+        @include sm-block() {
+          width: 100%;
+          margin-top: -10%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.H9 {
+
+    .haval__img {
+
+      img {
+        max-width: unset;
+        width: 112%;
+        margin-top: -15%;
+        margin-left: -15%;
+        @include lg-block() {
+          width: 105%;
+          margin-top: -12%;
+          margin-left: -13%;
+        }
+        @include md(margin-left, -8%);
+        @include sm-block() {
+          width: 100%;
+          margin-top: -10%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.main-header {
+  position: relative;
+  padding-bottom: 70px;
+  background: url('../img/main-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  @include md-block() {
+    height: 100vh;
+    padding-bottom: 0;
+    background: url('../img/main-img-tablet.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @include xs-block() {
+    overflow: hidden;
+    background: url('../img/main-img-phone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+}

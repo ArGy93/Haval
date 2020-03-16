@@ -1,0 +1,32 @@
+section(class="" + item.class id="" + item.id)
+  .container
+    .haval__main
+      .haval__info.animated.third
+        .haval__head
+          .haval__model
+            span.haval__model-type Городской кросовер
+            h2.haval__model-name #{item.name}
+          .haval__price
+            .haval__price-start от 1 000 000
+            .haval__price-profit выгода до 200 000 р.
+        ul.haval__list
+          li.haval__list-item Ставка по кредиту от 7.5%*
+          li.haval__list-item Сигнализация в ПОДАРОК
+          li.haval__list-item ываываывмывыф
+          li.haval__list-item 2 года гарантии ввввввввввв
+          li.haval__list-item Бонус за трейд-ин до 50 000 руб от 19 310 Р/мес.
+      .haval__img.animated.second
+        img(src="" + item.imgPath, alt="")
+    .haval__buttons
+      a(href="").btn-main
+        span Получить предложение
+      a(href="").btn-main
+        span Расчет кредита
+      a(href="" + item.pageLink).btn__about
+        span.btn__about-text Об автомобиле
+        span.btn__about-line.right
+        span.btn__about-line.top
+        span.btn__about-line.left
+        span.btn__about-line.bottom
+        span.arrow-line
+        +icon('right-arrow', '20px', '20px')

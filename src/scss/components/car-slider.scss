@@ -1,0 +1,90 @@
+.car-slider {
+  padding-top: 35px;
+  @include sm(display, none);
+
+  .container {
+    position: relative;
+    padding: 0 105px;
+  }
+
+  &__slide {
+    position: relative;
+    padding-top: 33px;
+  }
+
+  &__img-first {
+    width: 90%;
+    margin-bottom: 20px;
+    @include md(width, 96%);
+  }
+
+  &__img-second {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+
+  &__img-third {
+    @include absolute($top: 0, $right: 0);
+    z-index: 1;
+    width: 41%;
+  }
+
+  &__info {
+    @include absolute($bottom: 0, $right: 0);
+    z-index: 2;
+    box-sizing: border-box;
+    width: 37%;
+    padding: 10px 10px 20px;
+    font-family: "PF DinDisplay Pro";
+    text-align: center;
+    font-size: 18px;
+    color: $color-black;
+    background-color: $color-light-grey;
+    @include lg(width, 50%);
+    @include md-block() {
+      width: 65%;
+      font-size: 15px;
+    }
+
+    &-title {
+      font-weight: bold;
+    }
+
+    &-subtitle {
+      color: $color-grey;
+    }
+
+    &-text {
+      text-align: left;
+      white-space: normal;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .icon-slider-prev,
+  .icon-slider-next {
+    @include absolute($top: 50%);
+    cursor: pointer;
+    fill: $color-grey;
+    transform: translateY(-50%);
+    transition: all 0.5s ease;
+
+    &:hover {
+      fill: $color-dark;
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+
+  .icon-slider-prev {
+    left: -105px;
+    @include lg(left, -90px);
+  }
+
+  .icon-slider-next {
+    right: -105px;
+    @include lg(right, -90px);
+  }
+}

@@ -1,0 +1,111 @@
+.main-footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'PF DinDisplay Pro';
+  color: $color-white;
+  background-color: $color-black;
+
+  &__items {
+    @include row-flex();
+    align-items: center;
+
+    &-first,
+    &-second,
+    &-third,
+    &-fourth {
+      @include col();
+      @include size(3);
+      @include size-lg(6);
+      @include size-sm(12);
+      @include sm(margin-bottom, 20px);
+    }
+
+    &-first {
+      @include size(2);
+      @include size-lg(5);
+      @include size-sm(12);
+      @include shift-lg-left(1);
+      @include shift-sm-left(0);
+    }
+
+    &-second {
+      @include size(4);
+      @include size-lg(6);
+      @include size-sm(12);
+    }
+
+    &-third {
+      @include lg(order, 4);
+    }
+
+    &-fourth {
+      @include size-lg(5);
+      @include size-sm(12);
+      @include shift-lg-left(1);
+      @include shift-sm-left(0);
+      @include sm(order, 4);
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: bold;
+    @include sm(text-align, center);
+  }
+
+  &__dealer,
+  &__location,
+  &__phone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    @include sm(justify-content, center);
+    @include xs(font-size, 14px);
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $color-white;
+    }
+
+    svg {
+      margin-right: 10px;
+      fill: $color-white;
+    }
+  }
+
+  &__dealer {
+    margin-bottom: 0;
+  }
+
+  &__location {
+    margin-left: -5px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    padding: 17px 38px;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 100;
+    color: $color-white;
+    background-color: $color-grey;
+    transition: all 0.4s ease;
+    @include sm-block() {
+      display: block;
+      width: 230px;
+      margin: 0 auto;
+      padding: 12px 50px;
+    }
+
+    &:hover {
+      box-shadow: 0 7px 14px $btn-shadow-white, 0 3px 3px $btn-shadow-white;
+    }
+  }
+}

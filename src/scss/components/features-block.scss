@@ -1,0 +1,106 @@
+.features {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  color: $color-black;
+  @include lg(margin-bottom, 15px);
+
+  &__info {
+    margin-left: 90px;
+    @include sm(margin-left, 55px);
+
+    &::before {
+      @include pseudo();
+      @include absolute($top: 10px, $left: 0);
+    }
+
+    &-title {
+      line-height: 34px;
+      font-size: 20px;
+      font-weight: bold;
+      @include md-block() {
+        line-height: 42px;
+        font-size: 28px;
+      }
+      @include xs-block() {
+        line-height: 28px;
+        font-size: 18px;
+      }
+    }
+
+    &-text {
+      line-height: 28px;
+      font-size: 16px;
+      font-weight: bold;
+      @include md-block() {
+        line-height: 36px;
+        font-size: 24px;
+      }
+      @include sm-block() {
+        line-height: 24px;
+        font-size: 14px;
+      }
+    }
+
+    &.first {
+
+      &::before {
+        width: 56px;
+        height: 64px;
+        background-image: url('../img/advantage-bonus.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sm-block() {
+          width: 28px;
+          height: 32px;
+        }
+      }
+    }
+
+    &.second {
+
+      &::before {
+        width: 64px;
+        height: 48px;
+        background-image: url('../img/advantage-card.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sm-block() {
+          width: 32px;
+          height: 24px;
+        }
+      }
+    }
+
+    &.third {
+
+      &::before {
+        width: 61px;
+        height: 45px;
+        background-image: url('../img/advantage-installment.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sm-block() {
+          width: 30px;
+          height: 22px;
+        }
+      }
+    }
+
+    &.fourth {
+
+      &::before {
+        width: 63px;
+        height: 65px;
+        background-image: url('../img/advantage-trade.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sm-block() {
+          width: 31px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}

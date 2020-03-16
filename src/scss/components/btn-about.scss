@@ -1,0 +1,223 @@
+.btn__about {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding: $pad $extra;
+  padding-right: 70px;
+  border: $thick solid transparent;
+  text-decoration: none;
+  color: $color-white;
+  @include lg-block() {
+    padding: 0 $extra;
+    padding-right: 55px;
+  }
+  @include md-block() {
+    position: absolute;
+    margin-top: -80px;
+  }
+  @include sm-block() {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 315px;
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+  }
+
+  &-text {
+    font-family: 'PF DinDisplay Pro';
+    text-transform: lowercase;
+    font-size: 28px;
+    color: $color-white;
+    transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+    @include lg-block() {
+      line-height: 38px;
+      font-size: 20px;
+    }
+    @include sm-block() {
+      line-height: 46px;
+      font-size: 25px;
+    }
+    @include xs-block() {
+      line-height: 34px;
+      font-size: 20px;
+    }
+  }
+
+  &:after {
+    @include pseudo();
+    opacity: 0;
+    bottom: -$thick;
+    left: $extra;
+    right: 80px;
+    height: $thick;
+    background: $color-main;
+    z-index: -1;
+    transition:
+      transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+      right 0.4s cubic-bezier(.2,.48,0,1) 0.6s,
+      left 0.4s cubic-bezier(.2,.48,0,1) 0.6s;
+    transform-origin: left;
+    @include lg-block() {
+      bottom: -$thick-small;
+      height: $thick-small;
+    }
+  }
+
+  .icon-right-arrow {
+    @include absolute($top: 50%, $right: 40px);
+    transform: translateY(-50%);
+    transition: all 0.5s ease;
+    fill: $color-white;
+    @include lg-block() {
+      right: 30px;
+      width: 15px !important;
+      height: 15px !important;
+      transform: translateY(-48%);
+    }
+    @include sm-block() {
+      right: 55px;
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  .arrow-line {
+    @include absolute($top: 50%, $right: 13px);
+    width: 0;
+    height: 1.5px;
+    background-color: $color-white;
+    transform: translateY(-50%);
+    transition: all 0.5s ease;
+    @include lg-block() {
+      height: 0.5px;
+      right: 15px;
+    }
+    @include sm(height, 1px)
+  }
+
+  &-line {
+    position: absolute;
+    background: $color-main;
+
+    &.right,
+    &.left {
+      width: $thick;
+      bottom: -$thick;
+      top: -$thick;
+      transform: scale3d(1,0,1);
+      @include lg-block() {
+        width: $thick-small;
+        bottom: -$thick-small;
+        top: -$thick-small;
+      }
+    }
+
+    &.top,
+    &.bottom {
+      height: $thick;
+      left: -$thick;
+      right: -$thick;
+      transform: scale3d(0,1,1);
+      @include lg-block() {
+        height: $thick-small;
+        left: -$thick-small;
+        right: -$thick-small;
+      }
+    }
+
+    &.right {
+      right: -$thick;
+      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+      transform-origin: top;
+      @include lg(right, -$thick-small);
+    }
+
+    &.top {
+      top: -$thick;
+      transition: transform 0.08s linear 0.43s;
+      transform-origin: left;
+      @include lg(top, -$thick-small);
+    }
+
+    &.left {
+      left: -$thick;
+      transition: transform 0.08s linear 0.51s;
+      transform-origin: bottom;
+      @include lg(left, -$thick-small);
+    }
+
+    &.bottom {
+      bottom: -$thick;
+      transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+      transform-origin: right;
+      @include lg(bottom, -$thick-small);
+    }
+  }
+
+  &:hover,
+  &:active {
+
+    &-text {
+      transform: translate3d(0,0,0);
+      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    &:after {
+      opacity: 1;
+      transform: scale3d(0,1,1);
+      right: -$thick;
+      left: -$thick;
+      transform-origin: right;
+      transition:
+        transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+        right 0.2s cubic-bezier(1,0,.65,1.01),
+        left 0.5s 0.3s;
+      @include lg-block() {
+        right: -$thick-small;
+        left: -$thick-small;
+      }
+    }
+
+    .btn__about-line {
+      transform: scale3d(1,1,1);
+
+      &.right {
+        transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+        transform-origin: bottom;
+      }
+
+      &.top {
+        transition: transform 0.08s linear 0.4s;
+        transform-origin: right;
+      }
+
+      &.left {
+        transition: transform 0.08s linear 0.48s;
+        transform-origin: top;
+      }
+
+      &.bottom {
+        transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+        transform-origin: left;
+      }
+    }
+  }
+
+  &.active {
+
+    .icon-right-arrow {
+      right: 8px;
+      @include lg(right, 10px);
+    }
+
+    .arrow-line {
+
+      &.active {
+        width: 40px;
+        @include lg(width, 25px);
+        @include sm(width, 40px);
+      }
+    }
+  }
+}

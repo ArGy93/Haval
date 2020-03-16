@@ -1,0 +1,63 @@
+@mixin responsive($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin position($position, $top: false, $right: false, $bottom: false, $left: false) {
+  position: $position;
+  @if $top {top: $top}
+  @if $right {right: $right}
+  @if $bottom {bottom: $bottom}
+  @if $left {left: $left}
+}
+
+@mixin absolute($top: false, $right: false, $bottom: false, $left: false) {
+  @include position(absolute, $top, $right, $bottom, $left)
+}
+
+@mixin relative($top: false, $right: false, $bottom: false, $left: false) {
+  @include position(relative, $top, $right, $bottom, $left)
+}
+
+@mixin fixed($top: false, $right: false, $bottom: false, $left: false) {
+  @include position(fixed, $top, $right, $bottom, $left)
+}
+
+@mixin input-placeholder {
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  display: $display;
+  position: $pos;
+  content: $content;
+}

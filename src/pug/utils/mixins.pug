@@ -1,0 +1,5 @@
+mixin icon(name,widthVal,heightVal)
+  - widthVal = widthVal || ''
+  - heightVal = heightVal || ''
+  svg(class="icon-" + name width=widthVal height=heightVal)
+    use(xlink:href="img/symbol/sprite.svg#" + name)

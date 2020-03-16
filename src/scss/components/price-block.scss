@@ -1,0 +1,200 @@
+.price {
+  position: relative;
+  z-index: 2;
+  font-family: 'PF DinDisplay Pro';
+  color: $color-black;
+  @include lg(margin-top, 0);
+
+  &__items {
+    @include row-flex();
+    flex-wrap: nowrap;
+    @include xl(flex-wrap, wrap);
+    @include md(justify-content, center);
+    @include sm-block() {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-first,
+    &-second,
+    &-third,
+    &-fourth {
+      @include col();
+      @include size(3);
+      @include size-md(5);
+      width: 25%;
+      padding: 15px;
+      background-color: $color-grey-opacity;
+      transform: skew(-20deg);
+      @include sm-block() {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 25px;
+        transform: skew(0);
+      }
+    }
+
+    &-first,
+    &-third {
+      @include shift-xl-left(2.5);
+      @include shift-md-left(0);
+      @include xl(margin-right, 35px);
+      @include sm-block() {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    &-second,
+    &-fourth {
+      @include shift-xl-left(3);
+      @include xl(margin-left, 35px);
+      @include sm(margin-left, 0);
+    }
+
+    &-first,
+    &-fourth {
+      transform: skew(-20deg);
+      @include xl(transform, skew(20deg));
+      @include sm(transform, skew(0));
+    }
+
+    &-first {
+
+      .price__info {
+        @include xl(transform, skew(-20deg));
+        @include sm(transform, skew(0));
+
+        &-title,
+        &-equipment {
+          @include xl-block() {
+            margin-left: -10px;
+            padding-left: 0;
+          }
+          @include xl(margin-left, 0);
+        }
+
+        &-start,
+        &-time {
+          @include xl(margin-left, 20px);
+          @include sm(margin-left, 0);
+        }
+
+        &-text {
+          @include xl(padding-left, 65px);
+          @include sm(padding-left, 0);
+        }
+      }
+    }
+
+    &-second {
+      @include sm(background-color, $color-white);
+    }
+
+    &-fourth {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      background-color: transparent;
+      @include sm(max-width, 230px);
+
+      .price__btn {
+
+        span {
+          @include xl(transform, skew(-20deg));
+          @include sm(transform, skew(0));
+        }
+      }
+    }
+  }
+
+  &__info {
+    margin-left: -30px;
+    padding: 0 7px;
+    transform: skew(20deg);
+    @include sm-block() {
+      margin-left: 0;
+      padding: 0;
+      transform: skew(0);
+    }
+
+    &-title {
+      display: block;
+      padding-left: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      @include sm(padding-left, 0);
+      @include xs(font-size, 20px);
+    }
+
+    &-equipment {
+      display: block;
+      padding-left: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 20px;
+      @include sm(padding-left, 0);
+      @include xs(font-size, 16px);
+    }
+
+    &-start {
+      display: block;
+      margin-top: 10px;
+      padding-left: 10px;
+      text-align: center;
+      font-size: 18px;
+      color: $color-grey;
+      @include sm(padding-left, 0);
+      @include xs(font-size, 15px);
+    }
+
+    &-time {
+      display: block;
+      padding-left: 10px;
+      text-align: center;
+      font-size: 18px;
+      color: $color-grey;
+      @include sm(padding-left, 0);
+      @include xs(font-size, 15px);
+    }
+
+    &-text {
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    padding: 17px 30px;
+    border: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100;
+    color: $color-white;
+    background-color: $color-dark;
+    @include lg-block() {
+      padding: 22px 30px;
+      font-size: 13px;
+    }
+
+    span {
+      display: block;
+      transform: skew(20deg);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

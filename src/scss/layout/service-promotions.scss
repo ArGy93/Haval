@@ -1,0 +1,47 @@
+.promotions {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-family: 'PF DinDisplay Pro';
+  background-image: url('../img/service-promotions-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__feature {
+    @include absolute($top: 0, $left: 0, $bottom: 0, $right: 0);
+    z-index: 1;
+    background-color: $opacity-bg-09;
+  }
+
+  &__header {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    color: $color-white;
+  }
+
+  &__items {
+    @include row-flex();
+    justify-content: center;
+
+    &-first,
+    &-second,
+    &-third {
+      @include col();
+      @include size(4);
+      @include size-md(6);
+      @include size-xs(9);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 16px;
+      color: $color-white;
+    }
+  }
+
+}

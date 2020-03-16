@@ -1,0 +1,127 @@
+.cheaper {
+  font-family: 'PF DinDisplay Pro';
+  background-color: $opacity-bg-08;
+
+  &__items {
+    @include row-flex();
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    @include xs-block() {
+      padding-bottom: 25px;
+    }
+
+    &-first {
+      @include col();
+      @include size(5);
+      @include size-lg(4);
+      @include size-md(12);
+      @include md-block() {
+        text-align: center;
+      }
+    }
+
+    &-second {
+      @include col();
+      @include size(7);
+      @include size-lg(8);
+      @include size-md(12);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: bold;
+    color: $color-white;
+    @include lg-block() {
+      font-size: 30px;
+    }
+    @include xs-block() {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: $color-white;
+    @include lg(font-size, 18px);
+    @include xs(font-size, 14px);
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    @include md-block() {
+      justify-content: center;
+    }
+    @include xs-block() {
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    appearance: none;
+    outline: none;
+    margin-right: 20px;
+    padding: 18px 25px;
+    border: 1px solid $secondary-btn;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: $color-black;
+    @include input-placeholder() {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 100;
+      color: $color-black;
+    }
+    @include lg-block() {
+      padding: 14px 20px;
+    }
+    @include sm-block() {
+      padding: 10px 15px;
+    }
+    @include xs-block() {
+      width: 100%;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    font-family: 'PF DinDisplay Pro';
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    padding: 16px 45px;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 300;
+    color: $color-white;
+    background-color: $secondary-btn;
+    transition: all 0.4s ease;
+    @include lg-block() {
+      padding: 13px 30px;
+      font-size: 20px;
+    }
+    @include sm-block() {
+      padding: 12px 20px;
+      font-size: 13px;
+    }
+    @include xs-block() {
+      width: 230px;
+      padding: 18px 48px;
+    }
+
+    &:hover {
+      box-shadow: 0 14px 28px $btn-shadow, 0 10px 10px $btn-shadow;
+    }
+  }
+}

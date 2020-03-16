@@ -1,0 +1,106 @@
+.location {
+  position: relative;
+  // background-image: url('../img/map.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
+  .container {
+    // display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__map {
+    @include absolute($top: 0, $left: 0, $bottom: 0, $right: 0);
+    z-index: 1;
+    // width: 100%;
+    // height: 282px;
+    // @include sm(height, 353px);
+    // @include xs(height, 347px);
+  }
+
+  &__feature {
+    display: none;
+    @include absolute($top: 0, $left: 0, $bottom: 0, $right: 0);
+    z-index: 2;
+    background-color: $opacity-bg-08;
+  }
+
+  &__form {
+    display: flex;
+    padding: 115px 45px;
+    @include md-block() {
+      justify-content: center;
+    }
+    @include sm-block() {
+      padding: 115px 32px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-search {
+      position: relative;
+      margin-right: 70px;
+      @include sm-block() {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    input[type=search] {
+      appearance: none;
+      outline: none;
+      border: 0;
+      max-width: 230px;
+      padding: 18px 20px 18px 70px;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      color: $color-black;
+      background-color: $color-grey;
+      @include input-placeholder() {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+        color: $color-white;
+      }
+      @include xs(padding, 15px 15px 15px 60px);
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 0;
+    font-family: 'PF DinDisplay Pro';
+    font-size: 20px;
+    color: $color-white;
+    background-color: $color-grey;
+    transition: all 0.4s ease;
+    @include sm-block() {
+      width: 230px;
+      padding: 15px 20px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      box-shadow: 0 14px 28px $btn-shadow, 0 10px 10px $btn-shadow;
+    }
+  }
+
+  .icon-search {
+    @include absolute($top: 50%, $left: 20px);
+    transform: translateY(-50%);
+    fill: $color-white;
+    @include xs-block() {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

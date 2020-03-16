@@ -1,0 +1,52 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 83.204%;
+  height: 106px;
+  background-color: $color-dark;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 98% 100%, 0 100%);
+  @include lg(width, 82%);
+  @include md(display, none);
+
+  ul {
+    display: flex;
+    margin-right: 15%;
+    font-family: 'PF DinDisplay Pro';
+    @include lg(margin-right, 5%);
+
+    li {
+      position: relative;
+      padding: 10px 22px;
+      transition: all 0.5s ease;
+
+      &::after {
+        opacity: 0;
+        visibility: hidden;
+        @include pseudo();
+        @include absolute($right: 17%, $bottom: 0, $left: 17%);
+        height: 2px;
+        background-color: $color-white;
+        transition: all 0.5s ease;
+      }
+
+      &.active,
+      &:hover {
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: $color-white;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+extends ../layout/template
+
+block variables
+  - var title = 'Главная'
+  - var keywords = ''
+  - var description = ''
+
+block content
+
+  each item in sectionContent
+    include ../components/haval
+
+  include ../components/service-promotions
+
+  include ../components/find-cheaper
+
+  include ../components/location

@@ -1,0 +1,99 @@
+.main-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__icon {
+    user-select: none;
+    outline: none;
+    display: none;
+    cursor: pointer;
+    @include absolute($top: 24px, $left: 20px);
+    padding: 8px;
+    @include md-block() {
+      position: relative;
+      display: block;
+    }
+
+    &-line {
+      width: 30px;
+      height: 4px;
+      border-radius: 50px;
+      background-color: $color-white;
+
+      &:first-child {
+        transform: translateX(10px);
+      }
+
+      &:nth-child(2) {
+        margin: 6px 0;
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &:hover {
+
+    .main-menu__icon-line {
+
+      &:first-child {
+        animation: menuWave-first 1.2s ease;
+      }
+
+      &:nth-child(2) {
+        animation: menuWave-second 1.2s ease;
+        animation-delay: 0.2s;
+      }
+
+      &:last-child {
+        animation: menuWave-third 1.2s ease;
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  &__logo {
+    @include relative($top: 24px, $left: 50%);
+    z-index: 10;
+    display: inline-block;
+    transform: translateX(-50%);
+    @include md(top, -10px);
+  }
+
+  &__info {
+    @include relative($top: -20px, $right: 20px);
+    text-align: right;
+    font-family: 'PF DinDisplay Pro';
+    color: $color-white;
+    @include md-block() {
+      display: none;
+    }
+
+    &-loc {
+      line-height: 30px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-tel {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-decoration: none;
+      color: $color-white;
+
+      span {
+        line-height: 30px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .icon-phone {
+        fill: $color-white;
+        margin-right: 12px;
+      }
+    }
+  }
+}

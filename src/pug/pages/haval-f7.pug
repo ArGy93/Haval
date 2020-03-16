@@ -1,0 +1,23 @@
+extends ../layout/template
+
+block variables
+  - var title = 'Haval F7'
+  - var keywords = ''
+  - var description = ''
+  - var imgClass = 'advantage__img f7'
+  - var advantageImgPath = 'Haval-F7-img.png'
+  - var contentImgPath = 'f7-main-img.png'
+  - var contentImgClass = 'f7'
+
+block content
+
+  main.about-car.f7
+    include ../components/car-info
+
+    include ../components/car-slider
+
+    include ../components/advantage
+
+    include ../components/find-cheaper
+
+    include ../components/location

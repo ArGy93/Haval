@@ -1,0 +1,30 @@
+{
+  "Haval-F7": {
+    "name": "Haval F7",
+    "id": "f7",
+    "class": "haval f7",
+    "imgPath": "img/Haval-F7.png",
+    "pageLink": "haval-f7.html"
+  },
+  "Haval-H6": {
+    "name": "Haval H6",
+    "id": "h6",
+    "class": "haval h6",
+    "imgPath": "img/Haval-H6.png",
+    "pageLink": "haval-h6.html"
+  },
+  "Haval-H2": {
+    "name": "Haval H2",
+    "id": "h2",
+    "class": "haval h2",
+    "imgPath": "img/Haval-H2.png",
+    "pageLink": "haval-h2.html"
+  },
+  "Haval-H9": {
+    "name": "Haval H9",
+    "id": "h9",
+    "class": "haval h9",
+    "imgPath": "img/Haval-H9.png",
+    "pageLink": "haval-h9.html"
+  }
+}
